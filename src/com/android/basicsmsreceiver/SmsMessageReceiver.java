@@ -22,13 +22,9 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.telephony.SmsMessage;
 import android.util.Log;
-import android.widget.RemoteViews;
 
 public class SmsMessageReceiver extends BroadcastReceiver {
     /** Tag string for our debug logs */

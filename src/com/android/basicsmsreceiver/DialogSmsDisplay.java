@@ -16,8 +16,6 @@
 
 package com.android.basicsmsreceiver;
 
-import java.util.Locale;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -27,9 +25,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.KeyEvent;
-import android.view.View;
-import android.view.Window;
 
 public class DialogSmsDisplay extends Activity {
     private static final String LOG_TAG = "SmsReceivedDialog";
@@ -50,7 +45,11 @@ public class DialogSmsDisplay extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Bundle extras = getIntent().getExtras();
+        parseIntent(getIntent());
+    }
+
+    private void parseIntent(Intent intent) {
+        Bundle extras = intent.getExtras();
         mFromAddress = extras.getString(SMS_FROM_ADDRESS_EXTRA);
         mMessage = extras.getString(SMS_MESSAGE_EXTRA);
         int notificationId = extras.getInt(SMS_NOTIFICATION_ID_EXTRA);
@@ -66,28 +65,35 @@ public class DialogSmsDisplay extends Activity {
     }
 
     @Override
+    protected void onNewIntent(Intent intent) {
+        removeDialog(DIALOG_SHOW_MESSAGE);
+
+        parseIntent(intent);
+    }
+
+    @Override
     protected Dialog onCreateDialog(int id) {
         switch (id) {
-        case DIALOG_SHOW_MESSAGE:
-            return new AlertDialog.Builder(this)
-                    .setTitle(String.format(getString(R.string.sms_message_from_format),
-                            mFromAddress))
-                    .setMessage(mMessage)
-                    .setCancelable(true)
-                    .setOnCancelListener(new AlertDialog.OnCancelListener() {
-                        public void onCancel(DialogInterface dialog) {
-                            dialog.dismiss();
-                            finish();
-                        }
-                    })
-                    .setNeutralButton(R.string.sms_done_button,
-                            new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int whichButton) {
-                            dialog.dismiss();
-                            finish();
-                        }
-                    })
-                    .create();
+            case DIALOG_SHOW_MESSAGE:
+                return new AlertDialog.Builder(this)
+                        .setTitle(String.format(getString(R.string.sms_message_from_format),
+                                mFromAddress))
+                        .setMessage(mMessage)
+                        .setCancelable(true)
+                        .setOnCancelListener(new AlertDialog.OnCancelListener() {
+                            public void onCancel(DialogInterface dialog) {
+                                dialog.dismiss();
+                                finish();
+                            }
+                        })
+                        .setNeutralButton(R.string.sms_done_button,
+                                new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int whichButton) {
+                                dialog.dismiss();
+                                finish();
+                            }
+                        })
+                        .create();
         }
         return null;
     }
