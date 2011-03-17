@@ -23,6 +23,10 @@
 
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
 
+    <!-- Needed just for the unit tests -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
     <application android:name="BasicSmsReceiverApp"
             android:label="@string/sms_app_name"
             android:hardwareAccelerated="true">

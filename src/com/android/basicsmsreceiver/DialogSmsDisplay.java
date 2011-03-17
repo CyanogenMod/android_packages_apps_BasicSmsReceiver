@@ -38,8 +38,9 @@ public class DialogSmsDisplay extends Activity {
     public static final String SMS_NOTIFICATION_ID_EXTRA =
                                                 "com.android.basicsmsreceiver.NOTIFICATION_ID";
 
-    private String mFromAddress;
-    private String mMessage;
+    // Visible to unit tests
+    String mFromAddress;
+    String mMessage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +50,13 @@ public class DialogSmsDisplay extends Activity {
     }
 
     private void parseIntent(Intent intent) {
+        if (intent == null) {
+            return;
+        }
         Bundle extras = intent.getExtras();
+        if (extras == null) {
+            return;
+        }
         mFromAddress = extras.getString(SMS_FROM_ADDRESS_EXTRA);
         mMessage = extras.getString(SMS_MESSAGE_EXTRA);
         int notificationId = extras.getInt(SMS_NOTIFICATION_ID_EXTRA);
