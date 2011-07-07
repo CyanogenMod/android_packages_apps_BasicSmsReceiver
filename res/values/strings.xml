@@ -15,7 +15,10 @@
 -->
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Name of this application. [CHAR LIMIT=NONE] -->
     <string name="sms_app_name">Simple message receiver</string>
-    <string name="sms_message_from_format">Message from %1$s</string>
+    <!-- Dialog title. [CHAR LIMIT=NONE] -->
+    <string name="sms_message_from_format">Message from <xliff:g id="userName">%1$s</xliff:g></string>
+    <!-- Name of the done button on dialog. [CHAR LIMIT=NONE] -->
     <string name="sms_done_button">Done</string>
 </resources>
