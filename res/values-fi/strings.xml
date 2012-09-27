@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--  Copyright (C) 2007 The Android Open Source Project
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2007 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -12,11 +12,13 @@
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
      See the License for the specific language governing permissions and
      limitations under the License.
- -->
+-->
 
-<resources xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="sms_app_name" msgid="3641211328012514267">"Yksinkertainen viestien vastaanotin"</string>
-    <string name="sms_message_from_format" msgid="7163240046237558485">"Viesti käyttäjältä <xliff:g id="USERNAME">%1$s</xliff:g>"</string>
-    <string name="sms_done_button" msgid="4063239029747798890">"Valmis"</string>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Name of this application. [CHAR LIMIT=NONE] -->
+    <string name="sms_app_name">Yksinkertainen viestien vastaanotin</string>
+    <!-- Dialog title. [CHAR LIMIT=NONE] -->
+    <string name="sms_message_from_format">Viesti henkilöltä <xliff:g id="userName">%1$s</xliff:g></string>
+    <!-- Name of the done button on dialog. [CHAR LIMIT=NONE] -->
+    <string name="sms_done_button">Valmis</string>
 </resources>
