@@ -15,7 +15,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="sms_app_name">Receutor de mensaxe cenciellu</string>
-  <string name="sms_message_from_format">Mensaxe de <xliff:g id="userName">%1$s</xliff:g></string>
-  <string name="sms_done_button">Fecho</string>
+  <string name="sms_app_name">SMS-Empfänger</string>
+  <string name="sms_message_from_format">Message vum <xliff:g id="userName">%1$s</xliff:g></string>
+  <string name="sms_done_button">Fäerdeg</string>
 </resources>
