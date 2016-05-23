@@ -16,9 +16,6 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Name of this application. [CHAR LIMIT=NONE] -->
-  <string name="sms_app_name">ئاددىي ئۇچۇر قوبۇللىغۇچ</string>
   <!-- Dialog title. [CHAR LIMIT=NONE] -->
-  <string name="sms_message_from_format"><xliff:g id="USERNAME">%1$s</xliff:g> نىڭ ئۇچۇرى</string>
   <!-- Name of the done button on dialog. [CHAR LIMIT=NONE] -->
-  <string name="sms_done_button">تامام</string>
 </resources>
