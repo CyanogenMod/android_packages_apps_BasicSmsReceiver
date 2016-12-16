@@ -17,6 +17,5 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Name of this application. [CHAR LIMIT=NONE] -->
   <!-- Dialog title. [CHAR LIMIT=NONE] -->
-  <string name="sms_message_from_format">Mesaĝo de <xliff:g id="userName">%1$s</xliff:g></string>
   <!-- Name of the done button on dialog. [CHAR LIMIT=NONE] -->
 </resources>
